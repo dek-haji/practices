@@ -1,33 +1,14 @@
-var today = new Date();
-var day = today.getDay();
-var daylist = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-console.log("Today is:" + daylist[day])
-console.log(day)
-var hour = today.getHours();
-var minutes = today.getMinutes();
-var seconds = today.getSeconds();
+var date = new Date;
+console.log(date)
+var mm = date.getMonth()+ 1;
+var dd = date.getDate()
+var yy = date.getFullYear()
+if (dd < 10){
+    dd='0'+dd
+}
+if (mm <10){
+    mm='0'+mm
+}
+today = mm+'-'+dd+'-'+yy;
 console.log(today)
-let prepand = (hour >= 12)? "PM": "AM";
-hour = (hour >= 12)? hour - 12: hour;
-if(hour === 0 && prepand === "PM")
-{
-if(minutes === 0 && seconds === 0)
-{
-hour = 12
-prepand = "noone"
-}else 
-hour = 12;
-prepand = "PM"
-}
-if( hour === 0 && prepand === "AM")
-{
-if( minutes === 0 && seconds === 0) 
-{
-    hour = 12;
-    prepand = "Midnight"
-}else {
-hour = 12;
-prepand = "AM"
-}
-}
-console.log(`today is ${daylist[day]} and the time is ${hour}${prepand}: ${minutes}: ${seconds}`)
+console.log(`${mm}-${dd}-${yy}`)
